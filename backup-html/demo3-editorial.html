@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 3 - Minimalist Narrative & Editorial Video Editor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        editorial: {
+                            bg: '#0c0d10',
+                            card: '#13151b',
+                            border: '#21242d',
+                            accent: '#e2e8f0',
+                            warm: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0c0d10;
+            color: #d1d5db;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-serif-title {
+            font-family: 'Newsreader', serif;
+        }
+        /* Custom delicate border */
+        .editorial-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .editorial-border-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="selection:bg-zinc-700 selection:text-white">
+
+    <!-- Top Minimal Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0c0d10]/90 backdrop-blur-md editorial-border-b">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="flex items-center space-x-2 text-xs font-mono text-zinc-400 hover:text-white transition bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Tất cả Demo</span>
+                </a>
+                <span class="text-xs text-zinc-400 font-mono tracking-widest uppercase">Concept 03: Editorial & Narrative</span>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-mono text-zinc-400">
+                <a href="#case-studies" class="hover:text-white transition">Case Studies</a>
+                <a href="#philosophy" class="hover:text-white transition">Triết Lý Kể Chuyện</a>
+                <a href="#workflow" class="hover:text-white transition">Quy Trình</a>
+                <a href="#contact" class="hover:text-white transition">Liên Hệ</a>
+            </nav>
+
+            <a href="#contact" class="text-xs uppercase tracking-widest font-mono border border-zinc-700 hover:border-white px-4 py-2 rounded-full text-white transition">
+                Trao đổi dự án
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pt-36 pb-24 md:pt-48 md:pb-36">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                    <span>Hà Nội / Remote</span>
+                    <span>&bull;</span>
+                    <span>Video Editor & Narrative Architect</span>
+                    <span>&bull;</span>
+                    <span class="text-zinc-300">8 Tháng Kinh Nghiệm</span>
+                </div>
+
+                <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-normal text-white leading-[1.15] tracking-tight">
+                    Dựng phim là nghệ thuật <br />
+                    <span class="italic text-zinc-400 font-light">sắp đặt cảm xúc & kể câu chuyện vô hình.</span>
+                </h1>
+
+                <p class="max-w-2xl text-base sm:text-lg text-zinc-400 font-light leading-relaxed pt-2">
+                    Tôi là <span class="text-zinc-200 font-medium">Bảo An</span>. Tôi chuyên hợp tác cùng các nhà sáng tạo nội dung YouTube dài, đạo diễn phim tài liệu và doanh nghiệp cần truyền tải những câu chuyện sâu sắc, có cấu trúc lớp lang và cảm xúc lắng đọng.
+                </p>
+
+                <div class="pt-6 flex flex-wrap gap-4 items-center">
+                    <a href="#case-studies" class="px-6 py-3 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-zinc-200 transition">
+                        Xem các Case Study tiêu biểu
+                    </a>
+                    <a href="#reel" class="px-6 py-3 rounded-full border border-zinc-800 hover:border-zinc-600 text-xs font-mono text-zinc-300 uppercase tracking-wider transition flex items-center space-x-2">
+                        <i class="fa-solid fa-play text-[10px]"></i>
+                        <span>Reel Rút Gọn (01:15)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELECTED CASE STUDIES (STORYTELLING IN DEPTH) -->
+    <section id="case-studies" class="py-24 editorial-border-b">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block mb-2">// Featured Portfolios</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl text-white">Các Dự Án Trọng Điểm</h2>
+                </div>
+                <span class="text-xs font-mono text-zinc-500 hidden sm:inline">Phân tích: Thách thức & Giải pháp dựng</span>
+            </div>
+
+            <!-- Case Study 1 -->
+            <div class="editorial-border rounded-2xl bg-editorial-card p-6 sm:p-10 mb-12 hover:border-zinc-700 transition">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="relative aspect-video rounded-xl overflow-hidden group cursor-pointer" onclick="openDocModal()">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80" alt="Documentary Film" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                                <span class="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition"><i class="fa-solid fa-play ml-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-zinc-500">
+                            <span class="text-zinc-300 font-semibold">TẬP 01</span>
+                            <span>&bull;</span>
+                            <span>Mini-Doc / YouTube Essay</span>
+                            <span>&bull;</span>
+                            <span>Thời lượng: 18:40</span>
+                        </div>
+                        <h3 class="font-serif-title text-2xl sm:text-3xl text-white leading-snug">Văn Hoá Cà Phê Vỉa Hè Hà Nội Qua Nửa Thế Kỷ</h3>
+                        
+                        <div class="space-y-3 pt-2 text-xs text-zinc-400 font-light leading-relaxed">
+                            <p><strong class="text-zinc-200 font-normal">Thách thức:</strong> Footage thô hơn 4 tiếng quay không kịch bản chi tiết, âm thanh đường phố nhiều tạp âm xe cộ.</p>
+                            <p><strong class="text-zinc-200 font-normal">Giải pháp dựng:</strong> Phân loại tuyến nhân vật (bác bán cà phê 30 năm vs bạn trẻ), thiết kế cấu trúc 3 hồi (Quá khứ - Hiện tại - Ký ức), lọc tạp âm và chỉ giữ lại tiếng thìa khuấy ly và tiếng còi xe làm soundscape chân thực.</p>
+                            <p><strong class="text-zinc-200 font-normal">Kết quả:</strong> Video đạt 420K lượt xem hữu cơ trên YouTube, thời lượng xem trung bình 68%.</p>
+                        </div>
+
+                        <div class="pt-4 flex items-center space-x-3 text-xs font-mono text-zinc-500">
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Premiere Pro</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Audition Clean</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Color Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="editorial-border rounded-2xl bg-editorial-card p-6 sm:p-10 mb-12 hover:border-zinc-700 transition">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative aspect-video rounded-xl overflow-hidden group cursor-pointer" onclick="openDocModal()">
+                            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80" alt="Podcast Series" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                                <span class="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition"><i class="fa-solid fa-play ml-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 space-y-4 order-2 lg:order-1">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-zinc-500">
+                            <span class="text-zinc-300 font-semibold">SERIES</span>
+                            <span>&bull;</span>
+                            <span>Deep Interview / Podcast</span>
+                            <span>&bull;</span>
+                            <span>Thời lượng: 45:00</span>
+                        </div>
+                        <h3 class="font-serif-title text-2xl sm:text-3xl text-white leading-snug">Podcast "Hành Trình Khởi Nghiệp Không Hoa Hồng"</h3>
+                        
+                        <div class="space-y-3 pt-2 text-xs text-zinc-400 font-light leading-relaxed">
+                            <p><strong class="text-zinc-200 font-normal">Thách thức:</strong> Định dạng podcast dài dễ gây nhàm chán nếu chỉ cắt qua lại giữa 2 góc máy.</p>
+                            <p><strong class="text-zinc-200 font-normal">Giải pháp dựng:</strong> Biên tập theo nhịp thở của khách mời, chèn các đoạn tài liệu minh họa (B-roll archival), tạo chapter markers rõ ràng và cắt trích đoạn hook mở đầu gây tò mò trong 30 giây đầu.</p>
+                            <p><strong class="text-zinc-200 font-normal">Kết quả:</strong> Trở thành series podcast công nghệ top 5 trên Spotify & YouTube Podcasts trong 3 tháng.</p>
+                        </div>
+
+                        <div class="pt-4 flex items-center space-x-3 text-xs font-mono text-zinc-500">
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Multicam Sync</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Story Flow</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Chapters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDITING PHILOSOPHY & CAPABILITIES -->
+    <section id="philosophy" class="py-24 editorial-border-b bg-[#0e1015]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="max-w-2xl mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block mb-2">// How I Think & Cut</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl text-white">3 Nguyên Tắc Cốt Lõi Khi Biên Tập Video Dài</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-3">
+                    <span class="text-xs font-mono text-zinc-500">01 / NHỊP THỞ</span>
+                    <h4 class="font-serif-title text-xl text-white">Không Dựng Vội Vã, Để Cảm Xúc Có Đất Lắng Đọng</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Một khoảng lặng 1.5 giây đúng chỗ có sức nặng hơn mười hiệu ứng chuyển cảnh giật gân. Tôi biết khi nào cần tăng tốc kịch tính và khi nào cần chậm lại để khán giả thấm thía.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="text-xs font-mono text-zinc-500">02 / SOUNDSCAPE</span>
+                    <h4 class="font-serif-title text-xl text-white">Âm Thanh Chiếm 50% Trải Nghiệm Khán Giả</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Từ tiếng gió thoảng, tiếng bước chân, cho đến cách hạ nhạc nền khi nhân vật nói điều quan trọng. Âm thanh phải chân thực và dẫn dắt vô thức tâm lý người xem.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="text-xs font-mono text-zinc-500">03 / TÔN TRỌNG TÁC QUYỀN</span>
+                    <h4 class="font-serif-title text-xl text-white">Tối Ưu Bản Quyền Nhạc & Tư Liệu 100%</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">
+                        Sử dụng nguồn nhạc bản quyền từ Artlist, Musicbed, Envato Elements. Tuyệt đối không để kênh YouTube của đối tác dính cờ vàng bản quyền hoặc mất kiếm tiền.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & TRUST -->
+    <section class="py-24 editorial-border-b">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i class="fa-solid fa-quote-left text-zinc-700 text-3xl mb-6"></i>
+            <blockquote class="font-serif-title text-2xl sm:text-3xl text-zinc-200 italic leading-relaxed">
+                "Bảo An là một trong số ít editor trẻ chịu lắng nghe câu chuyện đằng sau footage. Bạn không chỉ cắt clip đơn thuần mà chủ động tư vấn giúp mình cấu trúc lại bài nói để cuốn hút hơn từ đầu đến cuối."
+            </blockquote>
+            <div class="mt-6">
+                <span class="text-sm font-semibold text-white block">Trần Quốc Nam</span>
+                <span class="text-xs text-zinc-500 font-mono">YouTuber Văn Hóa & Du Lịch (150K Subs)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING -->
+    <section id="contact" class="py-24">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <span class="text-xs font-mono uppercase tracking-widest text-zinc-500 block mb-2">// Inquiries & Booking</span>
+            <h2 class="font-serif-title text-3xl sm:text-5xl text-white mb-6">Bắt Đầu Một Câu Chuyện Mới</h2>
+            <p class="text-xs sm:text-sm text-zinc-400 font-light mb-10 max-w-lg mx-auto">
+                Nếu bạn có dự án phim ngắn, video YouTube dài hoặc podcast cần tìm người đồng hành biên tập cẩn trọng, hãy để lại lời nhắn.
+            </p>
+
+            <div class="editorial-border rounded-2xl bg-editorial-card p-8 text-left">
+                <form onsubmit="handleEditorialSubmit(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-mono text-zinc-400 mb-1">Tên của bạn</label>
+                            <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-sm focus:outline-none focus:border-zinc-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-zinc-400 mb-1">Email / Số điện thoại</label>
+                            <input type="text" required placeholder="email@example.com hoặc SĐT" class="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-sm focus:outline-none focus:border-zinc-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-mono text-zinc-400 mb-1">Về dự án của bạn</label>
+                        <textarea rows="4" placeholder="Kể cho tôi nghe về kênh, mục tiêu nội dung, số lượng tập hoặc phong cách video bạn hướng tới..." class="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-sm focus:outline-none focus:border-zinc-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-white hover:bg-zinc-200 text-black font-semibold text-xs uppercase tracking-widest transition">
+                        Gửi Yêu Cầu Hợp Tác
+                    </button>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-zinc-800 flex flex-wrap justify-between items-center text-xs font-mono text-zinc-500 gap-4">
+                    <span>Email: baoan.narrative@gmail.com</span>
+                    <span>Telegram: @baoan_editor</span>
+                    <span>Zalo: 0989 xxx xxx</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 editorial-border-t text-center text-xs text-zinc-600 font-mono">
+        <p>© 2026 Bảo An &bull; Concept 3: Minimalist Narrative Studio</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="docModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-zinc-950 rounded-2xl overflow-hidden border border-zinc-800 p-2">
+            <div class="flex justify-between items-center px-4 py-2">
+                <span class="text-xs font-mono text-zinc-400">Mini-Doc Sample Video</span>
+                <button onclick="closeDocModal()" class="text-zinc-400 hover:text-white p-1 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black rounded-xl overflow-hidden">
+                <iframe id="docIframe" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDocModal() {
+            const modal = document.getElementById('docModal');
+            const iframe = document.getElementById('docIframe');
+            iframe.src = "https://www.youtube.com/embed/zSWdZVtXT7E?autoplay=1";
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closeDocModal() {
+            const modal = document.getElementById('docModal');
+            const iframe = document.getElementById('docIframe');
+            iframe.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        function handleEditorialSubmit(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi gắm câu chuyện! Tôi sẽ xem xét và phản hồi trong 2-4 giờ.');
+        }
+    </script>
+</body>
+</html>
+

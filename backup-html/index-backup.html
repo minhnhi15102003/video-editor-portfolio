@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoAlchemist - Professional Video Editor Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#7902d6',
+                            purpleHover: '#8d17eb',
+                            cardPurple: '#6e0bbd',
+                            dark: '#030305',
+                            cardDark: '#09090e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        heading: ['Montserrat', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #030305;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Gradient Underline for Section Titles (Signature RGB color grade scope line) */
+        .rgb-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .rgb-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444 0%, #f59e0b 25%, #10b981 50%, #3b82f6 75%, #a855f7 100%);
+            border-radius: 9999px;
+        }
+
+        /* Floating 3D Software Icons Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(-6deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+        @keyframes floatSlowRev {
+            0%, 100% { transform: translateY(0px) rotate(8deg); }
+            50% { transform: translateY(-14px) rotate(-5deg); }
+        }
+        .float-pr {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .float-ae {
+            animation: floatSlowRev 4.5s ease-in-out infinite;
+        }
+
+        /* Lightning / Electric Glow effect */
+        .electric-glow {
+            filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.75)) drop-shadow(0 0 35px rgba(121, 2, 214, 0.5));
+        }
+
+        /* Infinite Marquee Ticker */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030305;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7902d6;
+            border-radius: 4px;
+        }
+
+        /* Vertical "Go Back To Top" line */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body id="home" class="selection:bg-brand-purple selection:text-white relative">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#030305]/90 backdrop-blur-md border-b border-zinc-900/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-2 text-xl sm:text-2xl font-heading font-extrabold tracking-wide text-white">
+                <span class="text-white">Video</span><span class="text-brand-purple">Alchemist</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-heading font-bold uppercase tracking-widest text-zinc-300">
+                <a href="#home" class="hover:text-brand-purple transition duration-200">HOME</a>
+                <a href="#about" class="hover:text-brand-purple transition duration-200">ABOUT</a>
+                <a href="#skills" class="hover:text-brand-purple transition duration-200">SKILLS</a>
+                <a href="#portfolio" class="hover:text-brand-purple transition duration-200">PORTFOLIO</a>
+                <a href="#testimonials" class="hover:text-brand-purple transition duration-200">TESTIMONIALS</a>
+                <a href="#contact" class="hover:text-brand-purple transition duration-200">CONTACT</a>
+            </nav>
+
+            <!-- Social Media Icons (Desktop) -->
+            <div class="hidden md:flex items-center space-x-5 text-sm text-zinc-300">
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white text-2xl focus:outline-none p-2">
+                <i id="menuIcon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#07070b] border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-heading font-bold uppercase tracking-wider text-center">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">HOME</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">ABOUT</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">SKILLS</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">PORTFOLIO</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">TESTIMONIALS</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-brand-purple">CONTACT</a>
+            <div class="flex items-center justify-center space-x-6 pt-4 border-t border-zinc-800 text-lg text-zinc-400">
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-16 md:pt-44 md:pb-28 overflow-hidden">
+        <!-- Ambient Rainbow & Purple Spotlight Glow in Background -->
+        <div class="absolute -top-10 left-10 w-[350px] h-[350px] bg-gradient-to-tr from-purple-600/25 via-pink-600/15 to-emerald-500/15 blur-[120px] pointer-events-none rounded-full"></div>
+        <div class="absolute top-1/4 right-0 w-[500px] h-[450px] bg-brand-purple/20 blur-[140px] pointer-events-none rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <!-- Left Column: Headline & CTA -->
+            <div class="lg:col-span-7 text-left space-y-5">
+                <div class="inline-block">
+                    <span class="text-xs sm:text-sm font-heading font-extrabold uppercase tracking-widest text-zinc-400 block mb-1">
+                        JIMMY TURNER <span class="text-zinc-600 text-xs font-normal">(Hoặc Tên Bạn)</span>
+                    </span>
+                    <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight uppercase">
+                        PROFESSIONAL <br />
+                        <span class="text-white">VIDEO EDITOR</span>
+                    </h1>
+                </div>
+
+                <p class="text-sm sm:text-base text-zinc-400 max-w-lg font-medium">
+                    Making Your Videos Look More Cool.
+                </p>
+
+                <!-- Button "LETS TALK" -->
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-9 py-3.5 bg-brand-purple hover:bg-brand-purpleHover text-white font-heading font-bold text-sm tracking-wider uppercase rounded-none transition transform hover:-translate-y-0.5 shadow-lg shadow-purple-600/30">
+                        LETS TALK
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Editor Cutout Photo + 3D Pr & Ae Icons + Lightning Effects -->
+            <div class="lg:col-span-5 relative flex justify-center items-center mt-6 lg:mt-0">
+                
+                <!-- Floating Adobe Premiere Pro (Pr) Icon -->
+                <div class="absolute -top-8 -left-4 sm:top-2 sm:left-4 z-20 float-pr">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#00005b]/90 border-2 border-[#9999ff] p-2 flex items-center justify-center shadow-xl shadow-purple-900/60 electric-glow">
+                        <span class="font-heading font-black text-2xl sm:text-3xl text-[#9999ff]">Pr</span>
+                    </div>
+                </div>
+
+                <!-- Floating Adobe After Effects (Ae) Icon -->
+                <div class="absolute -top-6 -right-2 sm:top-6 sm:right-6 z-20 float-ae">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#00005b]/90 border-2 border-[#d291ff] p-2 flex items-center justify-center shadow-xl shadow-purple-900/60 electric-glow">
+                        <span class="font-heading font-black text-2xl sm:text-3xl text-[#d291ff]">Ae</span>
+                    </div>
+                </div>
+
+                <!-- Purple Lightning Graphic Behind Editor Shoulders -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <svg class="w-[380px] sm:w-[460px] h-auto text-purple-500 opacity-75 electric-glow animate-pulse" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 180 L130 140 L110 190 L190 120 L160 210 L250 150" stroke="url(#purpleGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M460 170 L380 130 L400 190 L320 110 L340 210 L260 160" stroke="url(#purpleGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="purpleGrad" x1="0" y1="0" x2="500" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#a855f7" />
+                                <stop offset="1" stop-color="#ec4899" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- Editor Cutout Portrait Card -->
+                <div class="relative z-10 w-64 sm:w-80 overflow-hidden flex flex-col items-center">
+                    <!-- Editor Image (Replace with your own transparent PNG avatar) -->
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" 
+                             alt="Professional Video Editor" 
+                             class="w-full h-80 sm:h-96 object-cover object-top rounded-2xl filter grayscale contrast-125 brightness-95 shadow-2xl">
+                        
+                        <!-- Golden Crown Graphic overlaid on shirt (as in the screenshot) -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-amber-400 text-3xl opacity-90 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TICKER / MARQUEE STRIP (SKILLS) -->
+    <div class="w-full py-4 bg-zinc-950/80 border-y border-zinc-900 overflow-hidden relative">
+        <div class="animate-marquee whitespace-nowrap text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-zinc-300">
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-3"></span> Cash Cow Editing</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-brand-purple mr-3"></span> Reels Editing</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-amber-400 mr-3"></span> Logo Animation</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Podcast Edit</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-red-400 mr-3"></span> Color Grading</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-purple-400 mr-3"></span> Sound Design</span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-3"></span> Cash Cow Editing</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-brand-purple mr-3"></span> Reels Editing</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-amber-400 mr-3"></span> Logo Animation</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Podcast Edit</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-red-400 mr-3"></span> Color Grading</span>
+            <span class="mx-6 flex items-center"><span class="w-2 h-2 rounded-full bg-purple-400 mr-3"></span> Sound Design</span>
+        </div>
+    </div>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-24 relative overflow-hidden text-center">
+        <!-- Faint DaVinci Color Wheel / Rainbow Silhouette in Background -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
+            <div class="w-[500px] h-[500px] rounded-full border-8 border-dashed border-zinc-700 bg-gradient-to-tr from-red-600/20 via-green-600/20 to-blue-600/20 blur-sm"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <!-- Title with Signature RGB Underline -->
+            <div class="mb-10 inline-block">
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-wider text-white rgb-underline">
+                    ABOUT ME
+                </h2>
+            </div>
+
+            <!-- Description Text (Exact from reference) -->
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-2xl mx-auto font-normal">
+                Welcome To The Cinematic Realm Of <span class="text-white font-bold">Jimmy</span> (Hoặc Tên Bạn), Where Creativity Meets Technology To Craft Visually Stunning Narratives. With A Passion For Storytelling And A Keen Eye For Detail, I Embark On A Journey To Transform Ordinary Footage Into Extraordinary Visual Experiences.
+            </p>
+
+            <!-- Social Links under About Me -->
+            <div class="flex items-center justify-center space-x-6 mt-8 text-zinc-400 text-lg">
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-brand-purple transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & EXPERTISE SECTION -->
+    <section id="skills" class="py-24 border-t border-zinc-900 bg-[#06060b] relative overflow-hidden">
+        <!-- Ambient Purple Glow -->
+        <div class="absolute top-1/2 -translate-y-1/2 -right-24 w-[450px] h-[450px] bg-brand-purple/15 blur-[140px] pointer-events-none rounded-full"></div>
+        <div class="absolute top-1/3 -left-20 w-[350px] h-[350px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="mb-16 text-center">
+                <div class="inline-block">
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-wider text-white rgb-underline">
+                        MY SKILLS
+                    </h2>
+                </div>
+                <p class="text-zinc-400 text-xs sm:text-sm mt-4 max-w-xl mx-auto">
+                    Những vũ khí phần mềm và kỹ thuật biên tập video thực chiến giúp biến các thước phim thô thành sản phẩm triệu views.
+                </p>
+            </div>
+
+            <!-- Part 1: Software Stack Grid (6 Software Cards) -->
+            <div class="mb-16">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-zinc-400 mb-6 flex items-center space-x-2">
+                    <span class="w-2 h-2 bg-brand-purple rounded-full"></span>
+                    <span>Phần Mềm & Công Cụ Hậu Kỳ</span>
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Skill 1: Premiere Pro -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#00005b]/80 border border-[#9999ff]/50 flex items-center justify-center font-heading font-black text-xl text-[#9999ff] shadow-lg group-hover:scale-105 transition">
+                                    Pr
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">Adobe Premiere Pro</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Master Cutting & Pacing</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">95%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Cắt nhịp tinh chỉnh (L-Cut & J-Cut), tổ chức file dự án khoa học, đồng bộ Multicam nhiều góc máy, xuất file tối ưu chuẩn 4K.
+                        </p>
+                        <!-- Progress bar -->
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2: After Effects -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#00005b]/80 border border-[#d291ff]/50 flex items-center justify-center font-heading font-black text-xl text-[#d291ff] shadow-lg group-hover:scale-105 transition">
+                                    Ae
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">Adobe After Effects</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Motion Graphics & VFX</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">85%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Motion Tracking gắn text vào vật thể, Intro / Outro động, hiệu ứng ánh sáng Neon & Electric, chuyển cảnh 3D không gian mượt mà.
+                        </p>
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3: DaVinci Resolve -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-500/50 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                                    <i class="fa-solid fa-palette text-amber-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">DaVinci Resolve</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Colorist & Look Dev</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">80%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Quy trình Node phân màu chuẩn điện ảnh, biến đổi Log footage (S-Log, D-Log) thành Rec.709, cân chỉnh Skintone tự nhiên và tone Teal & Orange.
+                        </p>
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4: CapCut Pro -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-cyan-500/50 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                                    <i class="fa-solid fa-bolt text-cyan-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">CapCut Pro</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Fast Shorts / Reels</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">90%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Xử lý video ngắn tốc độ cao bắt trend TikTok, tự động generate subtitle kết hợp style typography cá nhân hóa, bàn giao nhanh trong 24h.
+                        </p>
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5: Adobe Photoshop -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#001d26]/80 border border-[#31a8ff]/50 flex items-center justify-center font-heading font-black text-xl text-[#31a8ff] shadow-lg group-hover:scale-105 transition">
+                                    Ps
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">Adobe Photoshop</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Thumbnails & Assets</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">85%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Thiết kế Thumbnail YouTube tỷ lệ bấm cao (High CTR), tách phôi nhân vật, vẽ viền sáng Neon, tối ưu màu sắc nổi bật trên trang chủ YouTube.
+                        </p>
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6: Adobe Audition / Sound Mix -->
+                    <div class="p-6 bg-zinc-950/80 border border-zinc-800/80 hover:border-brand-purple transition duration-300 group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#001f18]/80 border border-[#00e699]/50 flex items-center justify-center font-heading font-black text-xl text-[#00e699] shadow-lg group-hover:scale-105 transition">
+                                    Au
+                                </div>
+                                <div>
+                                    <h4 class="font-heading text-base font-bold text-white group-hover:text-brand-purple transition">Audition & Sound Mix</h4>
+                                    <span class="text-[11px] font-mono text-zinc-400">Vocal Clean & SFX Mix</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-heading font-bold text-brand-purple">85%</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Khử ồn tạp âm môi trường, chống vang phòng (De-reverb), cân bằng mức âm lượng chuẩn -14 LUFS cho YouTube / TikTok mà không bị méo tiếng.
+                        </p>
+                        <div class="w-full h-1.5 bg-zinc-800 rounded-full mt-4 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-purple to-purple-400 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Part 2: Core Editing Capabilities (Thế Mạnh Thực Chiến) -->
+            <div>
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-zinc-400 mb-6 flex items-center space-x-2">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                    <span>Kỹ Thuật Dựng Giữ Chân Khán Giả (Retention)</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="p-6 bg-zinc-900/40 border border-zinc-800/60 relative group hover:border-zinc-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-brand-purple/20 text-brand-purple flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-2">Retention Pacing</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Cắt gọt 1.5 - 2s/lần, kết hợp hiệu ứng Zoom-in / Zoom-out và đổi góc máy liên tục để người xem không thể rời mắt.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-zinc-900/40 border border-zinc-800/60 relative group hover:border-zinc-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </div>
+                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-2">Sound Design (SFX)</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Kho thư viện hơn 10,000+ âm thanh Whoosh, Pop, Riser, Impact giúp mỗi hành động trên màn hình trở nên sống động và đã tai.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-zinc-900/40 border border-zinc-800/60 relative group hover:border-zinc-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-closed-captioning"></i>
+                        </div>
+                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-2">Kinetic Subtitles</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Phụ đề nhảy chữ Karaoke đồng bộ theo từng âm tiết, đổi màu theo từ khóa quan trọng và chèn icon minh họa phong cách Alex Hormozi.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-zinc-900/40 border border-zinc-800/60 relative group hover:border-zinc-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-2">3-Second Hook Crafting</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Tạo đoạn mở đầu giật gân, đẩy tình tiết cao trào hoặc câu hỏi hóc búa lên 3 giây đầu tiên để phá vỡ thói quen lướt qua của khán giả.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MY BEST EDITS SECTION (PORTFOLIO) -->
+    <section id="portfolio" class="py-24 border-t border-zinc-900 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Section Header -->
+            <div class="mb-14">
+                <div class="inline-block">
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-wider text-white rgb-underline">
+                        MY BEST EDITS
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Projects Grid / Carousel -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1: CASH COW -->
+                <div class="group flex flex-col items-center">
+                    <div class="relative w-full aspect-[4/3] rounded-none overflow-hidden bg-zinc-900 border border-zinc-800 cursor-pointer group-hover:border-brand-purple transition duration-300" 
+                         onclick="openVideoModal('https://www.youtube.com/embed/5qap5aO4i9A', 'CASH COW EDIT')">
+                        <!-- Thumbnail -->
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=700&q=80" 
+                             alt="Cash Cow Edit" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition flex items-center justify-center">
+                            <!-- Circular Play Button -->
+                            <span class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-play ml-1 text-zinc-950"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Label -->
+                    <h3 class="font-heading text-lg font-extrabold text-white uppercase tracking-wider mt-4">
+                        CASH COW
+                    </h3>
+                </div>
+
+                <!-- Card 2: REEL -->
+                <div class="group flex flex-col items-center">
+                    <div class="relative w-full aspect-[4/3] rounded-none overflow-hidden bg-zinc-900 border border-zinc-800 cursor-pointer group-hover:border-brand-purple transition duration-300" 
+                         onclick="openVideoModal('https://www.youtube.com/embed/5qap5aO4i9A', 'VIRAL REEL EDIT')">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=700&q=80" 
+                             alt="Reel Edit" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition flex items-center justify-center">
+                            <span class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-play ml-1 text-zinc-950"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="font-heading text-lg font-extrabold text-white uppercase tracking-wider mt-4">
+                        REEL
+                    </h3>
+                </div>
+
+                <!-- Card 3: VLOG -->
+                <div class="group flex flex-col items-center">
+                    <div class="relative w-full aspect-[4/3] rounded-none overflow-hidden bg-zinc-900 border border-zinc-800 cursor-pointer group-hover:border-brand-purple transition duration-300" 
+                         onclick="openVideoModal('https://www.youtube.com/embed/zSWdZVtXT7E', 'CINEMATIC VLOG')">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=700&q=80" 
+                             alt="Vlog Edit" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition flex items-center justify-center">
+                            <span class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-play ml-1 text-zinc-950"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="font-heading text-lg font-extrabold text-white uppercase tracking-wider mt-4">
+                        VLOG
+                    </h3>
+                </div>
+
+                <!-- Card 4: COMMERCIAL / PODCAST (Thêm thẻ thứ 4 hoàn chỉnh bố cục) -->
+                <div class="group flex flex-col items-center">
+                    <div class="relative w-full aspect-[4/3] rounded-none overflow-hidden bg-zinc-900 border border-zinc-800 cursor-pointer group-hover:border-brand-purple transition duration-300" 
+                         onclick="openVideoModal('https://www.youtube.com/embed/zSWdZVtXT7E', 'COMMERCIAL TVC')">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80" 
+                             alt="Commercial Edit" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition flex items-center justify-center">
+                            <span class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-play ml-1 text-zinc-950"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="font-heading text-lg font-extrabold text-white uppercase tracking-wider mt-4">
+                        COMMERCIAL
+                    </h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-24 bg-[#030305]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            
+            <!-- Section Header -->
+            <div class="mb-14 inline-block">
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-wider text-white rgb-underline">
+                    TESTIMONIALS
+                </h2>
+            </div>
+
+            <!-- 3 Solid Purple Testimonial Boxes (Exact style from screenshot) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Testimonial 1: MARCUS -->
+                <div class="bg-brand-purple p-8 sm:p-10 text-white flex flex-col justify-between shadow-xl shadow-purple-950/40 rounded-none transform hover:-translate-y-1 transition duration-300 min-h-[260px]">
+                    <div>
+                        <h4 class="font-heading text-xl sm:text-2xl font-black uppercase tracking-wider">MARCUS</h4>
+                        <span class="text-xs font-semibold text-purple-200 uppercase tracking-widest block mt-1">Co Founder</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-purple-50 leading-relaxed font-medium mt-6">
+                        "Perfect Communication And Exceptional Skills. This Guy Is King."
+                    </p>
+                </div>
+
+                <!-- Testimonial 2: PETER -->
+                <div class="bg-brand-purple p-8 sm:p-10 text-white flex flex-col justify-between shadow-xl shadow-purple-950/40 rounded-none transform hover:-translate-y-1 transition duration-300 min-h-[260px]">
+                    <div>
+                        <h4 class="font-heading text-xl sm:text-2xl font-black uppercase tracking-wider">PETER</h4>
+                        <span class="text-xs font-semibold text-purple-200 uppercase tracking-widest block mt-1">Manager</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-purple-50 leading-relaxed font-medium mt-6">
+                        "Did A Great Job. Understood All The Requirements."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3: JANE -->
+                <div class="bg-brand-purple p-8 sm:p-10 text-white flex flex-col justify-between shadow-xl shadow-purple-950/40 rounded-none transform hover:-translate-y-1 transition duration-300 min-h-[260px]">
+                    <div>
+                        <h4 class="font-heading text-xl sm:text-2xl font-black uppercase tracking-wider">JANE</h4>
+                        <span class="text-xs font-semibold text-purple-200 uppercase tracking-widest block mt-1">CEO</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-purple-50 leading-relaxed font-medium mt-6">
+                        "Jimmy Was Wonderful To Work With. Will Definitely Hire Him Again."
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTATION & CONTACT SECTION -->
+    <section id="contact" class="py-24 border-t border-zinc-900 bg-black relative">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <!-- Section Header -->
+            <div class="mb-12">
+                <div class="inline-block">
+                    <h2 class="font-heading text-2xl sm:text-4xl font-extrabold uppercase tracking-wider text-white rgb-underline">
+                        I AM READY TO CONSULT YOU
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Consultation Form -->
+            <form onsubmit="handleContact(event)" class="space-y-6">
+                <!-- Desktop: Inline Horizontal fields / Mobile: Stacked -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    
+                    <!-- Field 1: My Name Is -->
+                    <div class="md:col-span-5 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
+                        <label class="font-heading text-xs uppercase tracking-wider text-zinc-300 whitespace-nowrap">My Name Is</label>
+                        <input type="text" required placeholder="Name" class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-brand-purple rounded-none">
+                    </div>
+
+                    <!-- Field 2: I Am Interested In -->
+                    <div class="md:col-span-5 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
+                        <label class="font-heading text-xs uppercase tracking-wider text-zinc-300 whitespace-nowrap">I Am Interested In</label>
+                        <input type="text" required placeholder="Message" class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-brand-purple rounded-none">
+                    </div>
+
+                    <!-- SEND Button -->
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full py-3.5 bg-brand-purple hover:bg-brand-purpleHover text-white font-heading font-extrabold text-xs uppercase tracking-widest transition rounded-none">
+                            SEND
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+            <!-- Contact Information Row (Exact Icons & Details from Reference) -->
+            <div class="mt-14 pt-8 border-t border-zinc-900/80 flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-xs text-zinc-400">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-phone text-brand-purple text-sm"></i>
+                    <span class="text-zinc-200">+84 987 654 321 <span class="text-zinc-500">(Zalo/Hotline)</span></span>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-location-dot text-brand-purple text-sm"></i>
+                    <span class="text-zinc-200">Hà Nội / TP. Hồ Chí Minh, Việt Nam</span>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-envelope text-brand-purple text-sm"></i>
+                    <span class="text-zinc-200">videoeditor@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- Social Links for Mobile View -->
+            <div class="flex sm:hidden items-center justify-center space-x-6 mt-8 text-zinc-400 text-lg">
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-brand-purple"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+        </div>
+
+        <!-- Vertical "Go Back To The Top" Link (Right Edge) -->
+        <a href="#home" class="hidden xl:flex items-center space-x-2 fixed bottom-12 right-6 z-40 text-[11px] font-heading font-bold uppercase tracking-widest text-zinc-400 hover:text-brand-purple transition duration-200">
+            <span class="vertical-text">Go Back To The Top</span>
+            <i class="fa-solid fa-arrow-up text-brand-purple"></i>
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 bg-black border-t border-zinc-900 text-center text-xs text-zinc-600 font-mono">
+        <p>© 2026 VideoAlchemist &bull; Crafted for Professional Video Editors</p>
+    </footer>
+
+    <!-- VIDEO MODAL POPUP -->
+    <div id="videoModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-zinc-950 border border-zinc-800 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 border-b border-zinc-800 bg-zinc-900/60">
+                <span class="text-xs font-heading font-bold text-brand-purple uppercase tracking-wider" id="modalTitle">Video Preview</span>
+                <button onclick="closeVideoModal()" class="text-zinc-400 hover:text-white p-1 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black">
+                <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Navigation
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Open Video Modal
+        function openVideoModal(url, title) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            const titleElem = document.getElementById('modalTitle');
+            if (title) titleElem.textContent = title;
+            iframe.src = url + "?autoplay=1";
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close Video Modal
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = "";
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+
+        // Contact Form Handle
+        function handleContact(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn! Yêu cầu tư vấn đã được gửi thành công. Video Editor sẽ liên hệ lại với bạn sớm nhất!');
+        }
+    </script>
+</body>
+</html>

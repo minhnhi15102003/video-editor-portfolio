@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Bản Demo Portfolio Dành Cho Video Editor (8 Tháng Kinh Nghiệm)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        dark: '#090a0f',
+                        card: '#11131a',
+                        border: '#1e2230'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #090a0f;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.25);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- TOP HEADER -->
+    <header class="border-b border-border bg-[#090a0f]/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-clapperboard"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-white leading-tight">Editor Portfolio Showcase</h1>
+                    <p class="text-[11px] font-mono text-zinc-400">3 Giải Pháp Giao Diện Tối Ưu Cho Editor 8 Tháng Kinh Nghiệm</p>
+                </div>
+            </div>
+
+            <div class="hidden sm:flex items-center space-x-3 text-xs font-mono">
+                <a href="#demos" class="text-zinc-400 hover:text-white transition px-3 py-1.5">3 Bản Demo</a>
+                <a href="#comparison" class="text-zinc-400 hover:text-white transition px-3 py-1.5">So Sánh Chi Tiết</a>
+                <a href="#advice" class="text-zinc-400 hover:text-white transition px-3 py-1.5">Kinh Nghiệm Chốt Khách</a>
+                <a href="#guide" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-2 rounded-lg font-sans font-semibold transition">Hướng Dẫn Thay Code</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO INTRODUCTION -->
+    <section class="py-16 sm:py-24 relative overflow-hidden border-b border-border">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/15 blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-6">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>Tùy Biến 100% &bull; Chuẩn Responsive Điện Thoại & Máy Tính</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Chọn Phong Cách Phù Hợp Để <br />
+                <span class="gradient-text">Nâng Tầm Định Giá Dịch Vụ Của Bạn</span>
+            </h1>
+
+            <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+                Với 8 tháng kinh nghiệm, bạn không còn là người mới bắt đầu nhưng cũng cần một landing page có <strong class="text-white">tỷ lệ chuyển đổi cao</strong>, làm nổi bật ngay thế mạnh kỹ thuật (Pacing, Sound FX, Color grading) mà không làm lộ điểm yếu về số lượng dự án.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
+                <div class="flex items-center space-x-2 bg-card px-4 py-2 rounded-xl border border-border">
+                    <i class="fa-solid fa-check text-green-400"></i>
+                    <span>Tích hợp sẵn Video Modal Player</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-card px-4 py-2 rounded-xl border border-border">
+                    <i class="fa-solid fa-check text-green-400"></i>
+                    <span>Thanh kéo so sánh Color Grading</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-card px-4 py-2 rounded-xl border border-border">
+                    <i class="fa-solid fa-check text-green-400"></i>
+                    <span>Khung điện thoại 9:16 Shorts/Reels</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 DEMOS PRESENTATION CARDS -->
+    <section id="demos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">// 3 Lựa Chọn Giao Diện</span>
+            <h2 class="text-3xl font-extrabold text-white">Khám Phá & Trải Nghiệm 3 Bản Demo</h2>
+            <p class="text-zinc-400 text-sm mt-2">Mỗi bản được nghiên cứu dựa trên một nhóm khách hàng mục tiêu riêng biệt.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- DEMO 1 CARD -->
+            <div class="bg-card rounded-2xl border border-border overflow-hidden flex flex-col justify-between card-glow transition duration-300">
+                <div>
+                    <!-- Badge Header -->
+                    <div class="p-6 border-b border-border bg-gradient-to-r from-amber-500/10 to-transparent">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-mono font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-2.5 py-1 rounded border border-amber-400/20">Concept 01</span>
+                            <span class="text-xs text-zinc-400 font-mono"><i class="fa-solid fa-film mr-1 text-amber-400"></i> DaVinci / PR</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">The Cinematic Darkroom</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Tone đen điện ảnh & vàng Gold sang trọng</p>
+                    </div>
+
+                    <!-- Visual Thumbnail / Feature list -->
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-xl bg-zinc-950 border border-zinc-800 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=700&q=80" alt="Cinematic Demo" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                <span class="text-xs font-mono text-amber-400 bg-black/80 px-3 py-1 rounded-full border border-amber-400/30">Commercials & Film Look</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-zinc-300">
+                            <p class="font-semibold text-white">Điểm mạnh thiết kế:</p>
+                            <ul class="space-y-2 pl-2">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-amber-400 mt-0.5"></i><span>Showreel chuẩn khung hình rạp phim trên Hero</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-amber-400 mt-0.5"></i><span><strong>Thanh trượt so sánh màu:</strong> Trước & Sau chỉnh màu (Log to Rec709) cực chuyên nghiệp</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-amber-400 mt-0.5"></i><span>Bộ lọc thể loại: Commercial, YouTube, Reels, Color Grade</span></li>
+                            </ul>
+
+                            <div class="pt-3 border-t border-border">
+                                <span class="text-[11px] font-mono text-zinc-400 block mb-1">Khách hàng nhắm tới:</span>
+                                <span class="text-xs text-amber-300 font-medium">Nhãn hàng thời trang, F&B, Agency, TVC quảng cáo sản phẩm, MV ca nhạc.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="p-6 pt-0">
+                    <a href="demo1-cinematic.html" target="_blank" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition shadow-lg shadow-amber-500/20">
+                        <span>Mở Trải Nghiệm Demo 1</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DEMO 2 CARD -->
+            <div class="bg-card rounded-2xl border-2 border-green-500/40 overflow-hidden flex flex-col justify-between card-glow transition duration-300 relative">
+                <span class="absolute top-0 right-0 bg-green-500 text-black text-[10px] font-mono font-extrabold uppercase px-3 py-0.5 rounded-bl-lg">Khuyên Dùng Hiện Nay</span>
+                <div>
+                    <!-- Badge Header -->
+                    <div class="p-6 border-b border-border bg-gradient-to-r from-green-500/10 to-transparent">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-mono font-bold text-green-400 uppercase tracking-wider bg-green-400/10 px-2.5 py-1 rounded border border-green-400/20">Concept 02</span>
+                            <span class="text-xs text-zinc-400 font-mono"><i class="fa-solid fa-bolt mr-1 text-green-400"></i> TikTok / Reels</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">The Viral Creator Hub</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Tone Cyber Neon & Chuyên sâu Tỷ lệ giữ chân</p>
+                    </div>
+
+                    <!-- Visual Thumbnail / Feature list -->
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-xl bg-zinc-950 border border-zinc-800 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=700&q=80" alt="Viral Creator Demo" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                <span class="text-xs font-mono text-green-400 bg-black/80 px-3 py-1 rounded-full border border-green-400/30">Vertical 9:16 Mockups</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-zinc-300">
+                            <p class="font-semibold text-white">Điểm mạnh thiết kế:</p>
+                            <ul class="space-y-2 pl-2">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-green-400 mt-0.5"></i><span><strong>Khung điện thoại 9:16 tương tác:</strong> Nhấn xem từng clip dọc như đang lướt TikTok</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-green-400 mt-0.5"></i><span>Phân tích biểu đồ giữ chân (Watch-time 80%+ vs Clip thường)</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-green-400 mt-0.5"></i><span>Bảng giá theo gói tháng (Retainer) minh bạch: Starter, Growth, VIP</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-green-400 mt-0.5"></i><span>Chiến lược tặng 1 bản dựng thử (Free Trial Cut) để chốt deal 100%</span></li>
+                            </ul>
+
+                            <div class="pt-3 border-t border-border">
+                                <span class="text-[11px] font-mono text-zinc-400 block mb-1">Khách hàng nhắm tới:</span>
+                                <span class="text-xs text-green-300 font-medium">TikToker, KOLs, YouTuber, Gym Coach, Chuyên gia tài chính/BĐS, Doanh nghiệp bán lẻ.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="p-6 pt-0">
+                    <a href="demo2-viral.html" target="_blank" class="w-full py-3 rounded-xl bg-green-500 hover:bg-green-400 text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition shadow-lg shadow-green-500/25">
+                        <span>Mở Trải Nghiệm Demo 2</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DEMO 3 CARD -->
+            <div class="bg-card rounded-2xl border border-border overflow-hidden flex flex-col justify-between card-glow transition duration-300">
+                <div>
+                    <!-- Badge Header -->
+                    <div class="p-6 border-b border-border bg-gradient-to-r from-zinc-500/10 to-transparent">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-mono font-bold text-zinc-300 uppercase tracking-wider bg-zinc-800 px-2.5 py-1 rounded border border-zinc-700">Concept 03</span>
+                            <span class="text-xs text-zinc-400 font-mono"><i class="fa-solid fa-book-open mr-1 text-zinc-300"></i> Documentary / Podcast</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">The Minimalist Narrative</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Phong cách Editorial Thụy Sỹ & Phim tài liệu</p>
+                    </div>
+
+                    <!-- Visual Thumbnail / Feature list -->
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-xl bg-zinc-950 border border-zinc-800 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80" alt="Editorial Demo" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                <span class="text-xs font-mono text-zinc-300 bg-black/80 px-3 py-1 rounded-full border border-zinc-700">In-depth Case Studies</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-zinc-300">
+                            <p class="font-semibold text-white">Điểm mạnh thiết kế:</p>
+                            <ul class="space-y-2 pl-2">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-zinc-400 mt-0.5"></i><span><strong>Cấu trúc Case Study chuyên sâu:</strong> Thách thức &rarr; Giải pháp dựng &rarr; Kết quả</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-zinc-400 mt-0.5"></i><span>Định dạng bài viết thanh lịch, phông chữ báo chí nghệ thuật (Editorial Serif)</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-caret-right text-zinc-400 mt-0.5"></i><span>Tôn vinh nhịp điệu kể chuyện (Pacing) & Thiết kế âm thanh (Soundscape)</span></li>
+                            </ul>
+
+                            <div class="pt-3 border-t border-border">
+                                <span class="text-[11px] font-mono text-zinc-400 block mb-1">Khách hàng nhắm tới:</span>
+                                <span class="text-xs text-zinc-200 font-medium">Kênh YouTube giáo dục, văn hóa, tài liệu mini-doc, Podcast dài, Doanh nghiệp lớn.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="p-6 pt-0">
+                    <a href="demo3-editorial.html" target="_blank" class="w-full py-3 rounded-xl bg-zinc-200 hover:bg-white text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition">
+                        <span>Mở Trải Nghiệm Demo 3</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE EMBED PREVIEW SECTION -->
+    <section class="py-16 bg-[#0c0e14] border-t border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+                <div>
+                    <h3 class="text-xl font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-desktop text-blue-400"></i>
+                        <span>Xem Nhanh Trực Tiếp Tại Chỗ</span>
+                    </h3>
+                    <p class="text-xs text-zinc-400">Chuyển qua lại giữa 3 giao diện bên dưới để so sánh tức thì.</p>
+                </div>
+
+                <div class="flex items-center space-x-2 bg-card p-1.5 rounded-xl border border-border">
+                    <button onclick="switchLiveDemo('demo1-cinematic.html', this)" class="preview-tab active px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 text-white transition">Demo 1 (Cinematic)</button>
+                    <button onclick="switchLiveDemo('demo2-viral.html', this)" class="preview-tab px-4 py-2 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white transition">Demo 2 (Viral Creator)</button>
+                    <button onclick="switchLiveDemo('demo3-editorial.html', this)" class="preview-tab px-4 py-2 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white transition">Demo 3 (Editorial)</button>
+                </div>
+            </div>
+
+            <!-- Preview Frame Container -->
+            <div class="w-full h-[650px] rounded-2xl overflow-hidden border border-border bg-black shadow-2xl relative">
+                <iframe id="livePreviewFrame" src="demo1-cinematic.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <div class="flex justify-between items-center mt-3 text-xs font-mono text-zinc-500">
+                <span>* Bạn cũng có thể mở trực tiếp file HTML trong trình duyệt để xem trải nghiệm toàn màn hình.</span>
+                <a id="openFullBtn" href="demo1-cinematic.html" target="_blank" class="text-blue-400 hover:underline">Mở toàn màn hình <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED COMPARISON TABLE -->
+    <section id="comparison" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">// So Sánh Toàn Diện</span>
+            <h2 class="text-3xl font-extrabold text-white">Bảng Tiêu Chí Chọn Giao Diện Phù Hợp</h2>
+            <p class="text-zinc-400 text-sm mt-2">Dựa trên định hướng phát triển của bạn trong 6 - 12 tháng tới.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse bg-card rounded-2xl overflow-hidden border border-border">
+                <thead>
+                    <tr class="border-b border-border bg-zinc-900/80 font-mono text-zinc-300">
+                        <th class="p-4 sm:p-5">Tiêu Chí</th>
+                        <th class="p-4 sm:p-5 text-amber-400">Concept 1: Cinematic</th>
+                        <th class="p-4 sm:p-5 text-green-400">Concept 2: Viral Short-Form</th>
+                        <th class="p-4 sm:p-5 text-zinc-200">Concept 3: Minimalist Narrative</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-border text-zinc-300">
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Loại sản phẩm chính</td>
+                        <td class="p-4 sm:p-5">TVC, Commercial, Trailer, Music Video</td>
+                        <td class="p-4 sm:p-5">Reels, TikTok, Shorts (9:16)</td>
+                        <td class="p-4 sm:p-5">YouTube Essay, Phim tài liệu, Podcast</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Nhu cầu thị trường hiện nay</td>
+                        <td class="p-4 sm:p-5">Trung bình &bull; Cần chất lượng cực cao</td>
+                        <td class="p-4 sm:p-5"><span class="text-green-400 font-bold">Rất cao</span> &bull; Nhu cầu mỗi ngày từ các Creator</td>
+                        <td class="p-4 sm:p-5">Ổn định &bull; Hợp đồng theo tháng/series</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Mức giá phổ biến / dự án</td>
+                        <td class="p-4 sm:p-5">1.500.000₫ – 5.000.000₫ / video</td>
+                        <td class="p-4 sm:p-5">200.000₫ – 600.000₫ / clip (thường làm gói 10-20 clip)</td>
+                        <td class="p-4 sm:p-5">1.000.000₫ – 3.500.000₫ / tập (15-40p)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Yêu cầu về kho Footage</td>
+                        <td class="p-4 sm:p-5">Cần footage sắc nét, quay máy xịn, góc máy đẹp</td>
+                        <td class="p-4 sm:p-5">Footage quay bằng điện thoại/webcam vẫn dựng viral tốt</td>
+                        <td class="p-4 sm:p-5">Footage phỏng vấn, nhiều B-roll minh họa</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Tính năng tương tác độc đáo</td>
+                        <td class="p-4 sm:p-5">Thanh kéo Before/After Color Grading</td>
+                        <td class="p-4 sm:p-5">Mô phỏng điện thoại 9:16, biểu đồ retention</td>
+                        <td class="p-4 sm:p-5">Case study: Thách thức &rarr; Giải pháp</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-semibold text-white">Độ khó khi chốt khách mới</td>
+                        <td class="p-4 sm:p-5">Khách cần xem portfolio rất kỹ</td>
+                        <td class="p-4 sm:p-5"><span class="text-green-400 font-bold">Dễ chốt nhất</span> nhờ ưu đãi "Dựng thử 1 clip"</td>
+                        <td class="p-4 sm:p-5">Cần buổi trao đổi (call) về định hướng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ADVICE FOR AN 8-MONTH VIDEO EDITOR -->
+    <section id="advice" class="py-20 bg-[#0c0e14] border-t border-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">// Lời Khuyên Thực Chiến</span>
+                <h2 class="text-3xl font-extrabold text-white">Chiến Lược Chốt Hợp Đồng Cho Editor 8 Tháng</h2>
+                <p class="text-zinc-400 text-sm mt-2">Làm thế nào để khách hàng tin tưởng và trả giá xứng đáng ngay từ đầu?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="p-6 rounded-2xl bg-card border border-border">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-4 font-mono">01</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Showreel chỉ cần 60 - 90 giây đắt giá nhất</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Đừng đưa tất cả video bạn từng dựng vào showreel. Khách hàng chỉ xem 15-30 giây đầu tiên. Hãy chọn ra 5-8 cảnh cắt giật beat mượt nhất, âm thanh SFX nảy nhất, và màu sắc đẹp nhất. Nhịp điệu dồn dập sẽ tạo cảm giác bạn là một editor cực kỳ chắc tay.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-card border border-border">
+                    <div class="w-10 h-10 rounded-xl bg-green-500/10 text-green-400 flex items-center justify-center font-bold mb-4 font-mono">02</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Nếu chưa có nhiều khách lớn: Tự tạo "Spec Work"</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Tải footage thô của các kênh YouTube nổi tiếng (hoặc các bài phát biểu của Steve Jobs, Dan Koe, podcast nổi tiếng) về tự dựng lại theo phong cách của bạn (thêm phụ đề động, zoom-in, b-roll, sound fx). Ghi rõ: "Re-edit Concept" – khách hàng quan tâm đến năng lực thật sự hơn là tên tuổi thương hiệu cũ.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-card border border-border">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4 font-mono">03</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Tuyệt chiêu: "Free Trial Cut" (Dựng thử 1 video ngắn)</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Ở mốc 8 tháng, rào cản lớn nhất của khách là: "Không biết bạn này dựng có hợp gu mình không?". Bằng cách đề xuất: <em>"Anh/chị cứ gửi 1 đoạn thô 30s-45s, em dựng thử hoàn toàn miễn phí. Hài lòng thì mình tính tiếp!"</em>, bạn sẽ có tỷ lệ mở lời thành công lên đến 70-80%.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-card border border-border">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 font-mono">04</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Bán theo gói Retainer tháng thay vì bán lẻ từng clip</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Bán lẻ 200k-300k/clip sẽ khiến bạn liên tục phải tìm khách mới. Hãy đóng gói: Gói 12-15 clip/tháng giá 4-6 triệu. Khách hàng là Creator hoặc Doanh nghiệp cần ra video đều đặn mỗi tuần nên họ rất thích gói cố định để an tâm về nguồn ra sản phẩm.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO CUSTOMIZE GUIDE -->
+    <section id="guide" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#131722] to-[#0d1017] border border-blue-500/30">
+            <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">// 5 Phút Cá Nhân Hóa</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Làm Thế Nào Để Thay Đổi Thông Tin & Video Của Bạn?</h2>
+            <p class="text-xs sm:text-sm text-zinc-400 mb-8 leading-relaxed">
+                Tất cả các file demo đều được viết bằng HTML chuẩn, không cần cài đặt Node.js hay bất kỳ phần mềm phức tạp nào. Bạn chỉ cần mở file bằng Notepad hoặc VS Code và thay thế:
+            </p>
+
+            <div class="space-y-4 text-xs font-mono">
+                <div class="p-4 rounded-xl bg-black/60 border border-zinc-800">
+                    <span class="text-amber-400 block font-bold mb-1">1. Thay tên & thông tin liên hệ:</span>
+                    <span class="text-zinc-400">Tìm kiếm các chữ <code class="text-white">Minh Quân / Hải Đăng / 09xx xxx xxx</code> và đổi thành Tên & SĐT Zalo của bạn.</span>
+                </div>
+
+                <div class="p-4 rounded-xl bg-black/60 border border-zinc-800">
+                    <span class="text-green-400 block font-bold mb-1">2. Thay đổi link Video:</span>
+                    <span class="text-zinc-400">Tìm kiếm hàm <code class="text-white">openVideoModal('https://www.youtube.com/embed/...')</code> và dán ID video YouTube hoặc Vimeo của bạn vào.</span>
+                </div>
+
+                <div class="p-4 rounded-xl bg-black/60 border border-zinc-800">
+                    <span class="text-blue-400 block font-bold mb-1">3. Xuất bản lên mạng miễn phí:</span>
+                    <span class="text-zinc-400">Bạn có thể kéo thả thư mục này lên <strong>Vercel, Netlify Drop, GitHub Pages</strong> hoặc gắn tên miền riêng (ví dụ: <code class="text-white">tenban-editor.vn</code>) hoàn toàn miễn phí chỉ trong 30 giây!</span>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4 items-center justify-between pt-6 border-t border-zinc-800">
+                <span class="text-xs text-zinc-400 font-sans">Đã tạo sẵn đầy đủ 4 file trong thư mục dự án của bạn: <code class="text-white font-mono">e:\Protfolio\</code></span>
+                <button onclick="alert('Các file demo đã sẵn sàng tại e:\\Protfolio\\. Bạn có thể click trực tiếp các nút Demo ở trên để xem ngay!')" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition">
+                    Xem Vị Trí File
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-border text-center text-xs text-zinc-500 font-mono">
+        <p>Portfolio Showcase & Consultation for Video Editors &bull; 2026</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function switchLiveDemo(fileUrl, btnElement) {
+            document.getElementById('livePreviewFrame').src = fileUrl;
+            document.getElementById('openFullBtn').href = fileUrl;
+
+            document.querySelectorAll('.preview-tab').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'active');
+                btn.classList.add('text-zinc-400');
+            });
+            btnElement.classList.remove('text-zinc-400');
+            btnElement.classList.add('bg-blue-600', 'text-white', 'active');
+        }
+    </script>
+</body>
+</html>
+
